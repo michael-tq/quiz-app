@@ -1,7 +1,7 @@
 body {
     margin: 0;
     background-image: url("http://clipart-library.com/images/di45aE7AT.jpg");
-    background-size: auto;
+    background-size: 100% 100vh;
 }
 
 h1 {
@@ -26,13 +26,11 @@ h2 {
 
 .begin-quiz-button {
     margin: 0 auto 1% auto ;
-    /* padding: 5%; */
 }
 
 #restart {
     display: none;
     width: 25%;
-    /* margin: 1em; */
     margin-left: auto;
     margin-right: auto;
 }
@@ -53,14 +51,6 @@ h2 {
 .correct {
     color: green;
 }
-/* 
-label {
-    text-align: right;
-    clear: both;
-    float: left;
-    margin-right:15px;
-
-}  */
 
 p {
     font-size: 1.5em;
@@ -112,9 +102,28 @@ label.col {
 .final {
     color: blue;
 }
-/* display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-margin-top: 15%; */
 
+fieldset {
+    border: none;
+}
+
+.question-box {
+    padding-top: 1em;
+    font-size: 1.5em;
+}
+
+#submitChoice:hover {
+    border: 1px solid black;
+}
+
+#next-question:hover {
+    border: 1px solid black;
+}
+
+#restart:hover {
+    border: 1px solid black;
+}
+
+.begin-quiz-button:hover {
+    border: 1px solid black;
+}

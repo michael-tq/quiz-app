@@ -17,10 +17,6 @@ function makeQuestion(questionNumber) {
     let potentialAnswers = '';
     for (let i = 0; i < currentQuestion.answers.length; i++){
         let currentAnswer = currentQuestion.answers[i];
-        // let answerCode = `
-        // <input type="radio" class="buttons" id="answer-${currentAnswer}" value="${currentAnswer}" name="answer"/>
-        // <label for="answer-${currentAnswer}">${currentAnswer}</label>
-        // `;
         let answerCode = `
         <label for="answer-${currentAnswer}" class='col'>
         <input type="radio" class="buttons" id="answer-${currentAnswer}" value="${currentAnswer}" name="answer"/>
@@ -28,19 +24,22 @@ function makeQuestion(questionNumber) {
         `
         potentialAnswers = potentialAnswers.concat(answerCode);
     }
-    let answers = `<ul>${potentialAnswers}</ul>`;
+    let answers = potentialAnswers;
     let questionCode = `
     <div>
         <form>
-        <h2>${currentQuestion.question}</h2>
+        <fieldset>
+        <legend class="question-box">${currentQuestion.question}</legend>
         ${answers}
         <button type="submit" id="submitChoice">Submit</button>
-        <button type="button" id="restart">Next</button>
+        <button type="button" id="next">Next</button>
+        </fieldset>
         </form>
     </div>
     `;
     $('.main-form').val(' ');
     $('.main-form').html(questionCode);
+    $('#next').hide();
 }
 
 function progressBar(displayScore, questionNumber){
